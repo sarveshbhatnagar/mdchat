@@ -22,6 +22,7 @@ program
   .command("ask <question>")
   .description("Ask a question and insert AI output into Markdown")
   .option("-o, --output <file>", "Append output to a markdown file")
+  .option("--no-stream", "Disable streaming and show complete response at once")
   .action(async (question, options) => {
     // Merge global options with command options
     const globalOptions = program.opts();
