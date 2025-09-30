@@ -2,6 +2,7 @@
 
 import { program } from "commander";
 import ask from "../src/commands/ask.js";
+import summarize from "../src/commands/summarize.js";
 import config from "../src/commands/config.js";
 
 program
@@ -25,6 +26,17 @@ program
     const globalOptions = program.opts();
     const mergedOptions = { ...options, ...globalOptions };
     await ask(question, mergedOptions);
+  });
+
+program
+  .command("summarize <input>")
+  .description("Summarize content from a file or text input")
+  .option("-o, --output <file>", "Append summary to a markdown file")
+  .action(async (input, options) => {
+    // Merge global options with command options
+    const globalOptions = program.opts();
+    const mergedOptions = { ...options, ...globalOptions };
+    await summarize(input, mergedOptions);
   });
 
 program
