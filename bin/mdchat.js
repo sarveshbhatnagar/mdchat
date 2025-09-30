@@ -3,6 +3,7 @@
 import { program } from "commander";
 import ask from "../src/commands/ask.js";
 import summarize from "../src/commands/summarize.js";
+import edit, { listSections } from "../src/commands/edit.js";
 import config from "../src/commands/config.js";
 
 program
@@ -38,6 +39,28 @@ program
     const globalOptions = program.opts();
     const mergedOptions = { ...options, ...globalOptions };
     await summarize(input, mergedOptions);
+  });
+
+program
+  .command("edit <file>")
+  .description("Edit and improve markdown files with AI assistance")
+  .option("-a, --action <action>", "Edit action: simplify, clarify, shorten, expand, improve, rewrite, fix", "improve")
+  .option("-s, --section <section>", "Target specific section by header name")
+  .option("-o, --output <file>", "Save edited content to a file")
+  .option("--replace", "Replace the original file (creates backup)")
+  .option("--instructions <text>", "Additional custom instructions for the AI")
+  .action(async (file, options) => {
+    // Merge global options with command options
+    const globalOptions = program.opts();
+    const mergedOptions = { ...options, ...globalOptions };
+    await edit(file, mergedOptions);
+  });
+
+program
+  .command("sections <file>")
+  .description("List all sections in a markdown file")
+  .action(async (file) => {
+    await listSections(file);
   });
 
 program
