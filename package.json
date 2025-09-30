@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarveshbhatnagar/mdplus.git"
+    "url": "git+https://github.com/sarveshbhatnagar/mdchat.git"
   },
   "keywords": [],
   "author": "sarvesh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sarveshbhatnagar/mdplus/issues"
+    "url": "https://github.com/sarveshbhatnagar/mdchat/issues"
   },
-  "homepage": "https://github.com/sarveshbhatnagar/mdplus#readme",
+  "homepage": "https://github.com/sarveshbhatnagar/mdchat#readme",
   "dependencies": {
     "commander": "^12.0.0"
   }
