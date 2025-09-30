@@ -1,4 +1,4 @@
-# Markdown Plus (mdplus) ✨  
+# Markdown Chat (mdchat) ✨  
 Collaborate with LLMs directly in your terminal.  
 Ask, edit, summarize, and generate content inline in Markdown.  
 
@@ -19,7 +19,7 @@ All AI-generated content is wrapped in `<!-- AI: ... -->` blocks, so you always 
 ## 📦 Installation
 ```bash
 # install globally
-npm install -g mdplus
+npm install -g mdchat
 
 # or run once via npx
-npx mdplus --help
+npx mdchat --help

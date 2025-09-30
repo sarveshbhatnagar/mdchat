@@ -3,8 +3,8 @@
 import { program } from "commander";
 
 program
-  .name("mdp")
-  .description("Markdown Plus: LLM collaboration in your terminal")
+  .name("mdchat")
+  .description("Markdown Chat: LLM collaboration in your terminal")
   .version("0.1.0");
 
 program

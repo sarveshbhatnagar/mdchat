@@ -1,11 +1,11 @@
 {
-  "name": "mdplus",
+  "name": "mdchat",
   "version": "1.0.0",
   "description": "Collaborate with LLMs directly in your terminal.   Ask, edit, summarize, and generate content inline in Markdown.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "mdplus": "./bin/mdplus.js"
+    "mdchat": "./bin/mdchat.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
