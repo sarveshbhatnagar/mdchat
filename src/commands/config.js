@@ -1,4 +1,5 @@
 // src/commands/config.js
+// TODO : later implement config based llm, currently using default openai gpt-4o model.
 import { setConfig, loadConfig } from "../core/config.js";
 
 export default function config(cmd, key, value) {

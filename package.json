@@ -1,6 +1,6 @@
 {
   "name": "mdchat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collaborate with LLMs directly in your terminal.   Ask, edit, summarize, and generate content inline in Markdown.",
   "type": "module",
   "main": "src/index.js",
@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/sarveshbhatnagar/mdchat#readme",
   "dependencies": {
+    "@ai-sdk/openai": "^2.0.42",
+    "ai": "^5.0.59",
     "commander": "^14.0.1"
   }
 }
