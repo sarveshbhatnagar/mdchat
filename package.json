@@ -1,26 +1,26 @@
 {
-  "name": "mdplus",
+  "name": "mdchat",
   "version": "1.0.0",
   "description": "Collaborate with LLMs directly in your terminal.   Ask, edit, summarize, and generate content inline in Markdown.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "mdplus": "./bin/mdplus.js"
+    "mdchat": "./bin/mdchat.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarveshbhatnagar/mdplus.git"
+    "url": "git+https://github.com/sarveshbhatnagar/mdchat.git"
   },
   "keywords": [],
   "author": "sarvesh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sarveshbhatnagar/mdplus/issues"
+    "url": "https://github.com/sarveshbhatnagar/mdchat/issues"
   },
-  "homepage": "https://github.com/sarveshbhatnagar/mdplus#readme",
+  "homepage": "https://github.com/sarveshbhatnagar/mdchat#readme",
   "dependencies": {
     "commander": "^12.0.0"
   }
