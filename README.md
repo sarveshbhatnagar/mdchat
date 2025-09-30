@@ -9,7 +9,6 @@ Ask, edit, summarize, and generate content inline in Markdown.
 - ✍️ **Edit sections** with AI-powered rewrites (simplify, clarify, shorten, etc.).  
 - 📚 **Summarize** long notes or papers into concise takeaways.  
 - 📄 **Generate blog posts** and documentation in Markdown.  
-- 🔍 **AI-powered diffing** to explain what changed and why.  
 - 💬 **Interactive chat mode** with an LLM inside your terminal.  
 
 All AI-generated content is wrapped in `<!-- AI: ... -->` blocks, so you always know what’s machine-written.  

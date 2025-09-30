@@ -30,8 +30,9 @@ program
 
 program
   .command("summarize <input>")
-  .description("Summarize content from a file or text input")
+  .description("Summarize content from files, directories, or text input")
   .option("-o, --output <file>", "Append summary to a markdown file")
+  .option("--combine", "Create a combined summary when processing multiple files")
   .action(async (input, options) => {
     // Merge global options with command options
     const globalOptions = program.opts();
