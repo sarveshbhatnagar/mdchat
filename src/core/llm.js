@@ -1,5 +1,5 @@
 // src/core/llm.js
-import { generateText } from 'ai';
+import { generateText, streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 /**
@@ -16,6 +16,35 @@ export async function askLLM(prompt, cliOptions = {}) {
         prompt: prompt,
       });
     return text;
+}
+
+/**
+ * Ask an LLM with streaming response
+ * @param {string} prompt - User input
+ * @param {Object} cliOptions - CLI options for config override
+ * @returns {Promise<string>} - Complete generated text after streaming
+ */
+export async function askLLMStream(prompt, cliOptions = {}) {
+    const result = await streamText({
+        model: openai('gpt-4o'),
+        system: 'You are a helpful assistant that answers questions in markdown format. ' + 
+        'Directly provide the markdown content without any extra commentary. Do not start with ```markdown or any other code block notation.',
+        prompt: prompt,
+    });
+
+    let fullText = '';
+    
+    // Stream the response to console in real-time
+    process.stdout.write('<!-- AI:answer -->\n');
+    
+    for await (const delta of result.textStream) {
+        process.stdout.write(delta);
+        fullText += delta;
+    }
+    
+    process.stdout.write('\n<!-- /AI -->\n');
+    
+    return fullText;
 }
 
 
