@@ -8,6 +8,7 @@ import ask from "../src/commands/ask.js";
 import summarize from "../src/commands/summarize.js";
 import edit, { listSections } from "../src/commands/edit.js";
 import config from "../src/commands/config.js";
+import insert from "../src/commands/insert.js";
 
 // Dynamically load version from package.json
 const __filename = fileURLToPath(import.meta.url);
@@ -70,6 +71,18 @@ program
   .description("List all sections in a markdown file")
   .action(async (file) => {
     await listSections(file);
+  });
+
+program
+  .command("insert <file>")
+  .description("Insert AI-generated content into marked blocks based on surrounding context")
+  .option("-o, --output <file>", "Save to a different file instead of updating the original")
+  .option("--preview", "Preview mode: show found insert blocks without processing")
+  .action(async (file, options) => {
+    // Merge global options with command options
+    const globalOptions = program.opts();
+    const mergedOptions = { ...options, ...globalOptions };
+    await insert(file, mergedOptions);
   });
 
 program
