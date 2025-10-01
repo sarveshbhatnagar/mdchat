@@ -74,9 +74,10 @@ program
 
 program
   .command("config")
-  .argument("<cmd>", "set | get | list")
+  .description("Configure MDChat settings (use 'setup' for interactive configuration)")
+  .argument("<cmd>", "setup | set | get | list")
   .argument("[key]", "Config key")
   .argument("[value]", "Config value (if setting)")
-  .action((cmd, key, value) => config(cmd, key, value));
+  .action(async (cmd, key, value) => await config(cmd, key, value));
 
 program.parse();

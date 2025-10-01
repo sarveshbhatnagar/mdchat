@@ -22,10 +22,22 @@ npm install -g mdchat
 
 # or run once via npx
 npx mdchat --help
-
+```
 
 **Requirements:** Node.js 20+
+
+---
+
+## ⚡ Quick Start
+```bash
+# 1. Run interactive setup (takes 30 seconds)
+mdchat config setup
+
+# 2. Start asking questions!
+mdchat ask "What is machine learning?"
 ```
+
+---
 ## 🎯 Commands
 
 ### Ask Question
@@ -69,23 +81,26 @@ mdchat edit guide.md --section "Setup" --action clarify
 ```
 
 ### Configuration
-As of now, it does not work. By default, only openai model is used (and gpt-4o at that!)
 ```bash
-# Set your preferred AI provider and model
-mdchat config --provider openai --model gpt-4
-mdchat config --api-key your-api-key
+# Interactive setup (recommended for first-time users)
+mdchat config setup
 
-# Use different providers
-mdchat config --provider anthropic --model claude-3-sonnet
+# Manual configuration
+mdchat config set provider openai
+mdchat config set model gpt-4o
+mdchat config set apiKey your-api-key
+
+# View current configuration
+mdchat config list
 ```
 
 ---
 
 ## ⚙️ Global Options
-- `--provider <provider>`: AI provider (openai, anthropic, etc.)
-- `--model <model>`: Model to use (gpt-4, claude-3-sonnet, etc.)
+- `--provider <provider>`: AI provider (openai, anthropic, ollama)
+- `--model <model>`: Model to use (gpt-4o, claude-3-5-sonnet-20241022, llama3.2, etc.)
 - `--api-key <key>`: API key for the provider
-- `--base-url <url>`: Custom API base URL
+- `--base-url <url>`: Custom API base URL (for ollama or custom endpoints)
 
 ---
 
