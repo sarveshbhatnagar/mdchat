@@ -90,7 +90,7 @@ async function setupInteractive() {
 
   // Provider selection
   console.log("Which AI provider would you like to use?");
-  console.log("1. OpenAI (GPT-4, GPT-3.5, etc.)");
+  console.log("1. OpenAI");
   console.log("2. Anthropic (Claude)");
   console.log("3. Ollama (Local models)");
   
