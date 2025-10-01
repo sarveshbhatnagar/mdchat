@@ -53,6 +53,33 @@ mdchat ask "Explain quantum computing" --no-stream
 mdchat ask "How does photosynthesis work?" -o biology.md
 ```
 
+### Insert Context-Aware Content
+
+```bash
+# Insert AI-generated content into marked blocks based on surrounding context
+mdchat insert document.md
+
+# Preview what will be generated without making changes
+mdchat insert document.md --preview
+
+# Save to a different file instead of modifying the original
+mdchat insert document.md -o enhanced-document.md
+```
+
+To use the insert command, add HTML comment markers in your markdown file:
+```markdown
+# My Document
+
+Existing paragraph about topic A.
+
+<!-- AI insert here -->
+<!-- AI insert end -->
+
+Existing paragraph about topic B.
+```
+
+The AI will analyze the surrounding context and generate connecting content that flows naturally between the paragraphs.
+
 ### Summarize Content
 ```bash
 # Summarize a single file
