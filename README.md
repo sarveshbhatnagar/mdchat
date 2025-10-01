@@ -24,15 +24,12 @@ npm install -g mdchat
 npx mdchat --help
 
 
-**Requirements:** Node.js 18+ (for streaming support)
-
----
-
+**Requirements:** Node.js 20+
+```
 ## 🎯 Commands
 
-### Ask Questions
-```bash
-### Ask Questions
+### Ask Question
+
 ```bash
 # Ask a question (streaming by default for better UX)
 mdchat ask "What is the capital of France?"
