@@ -1,15 +1,23 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 import ask from "../src/commands/ask.js";
 import summarize from "../src/commands/summarize.js";
 import edit, { listSections } from "../src/commands/edit.js";
 import config from "../src/commands/config.js";
 
+// Dynamically load version from package.json
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const packageJson = JSON.parse(readFileSync(join(__dirname, "../package.json"), "utf8"));
+
 program
   .name("mdchat")
   .description("Markdown Chat: LLM collaboration in your terminal")
-  .version("1.0.1");
+  .version(packageJson.version);
 
 // Global options for CLI-based config override
 program

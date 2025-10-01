@@ -8,7 +8,8 @@
     "mdchat": "./bin/mdchat.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/check-version-sync.js",
+    "check-version": "node scripts/check-version-sync.js"
   },
   "repository": {
     "type": "git",
