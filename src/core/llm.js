@@ -62,14 +62,23 @@ function getModel(cliOptions = {}) {
 
     switch (provider) {
         case 'openai':
-            return { type: 'ai-sdk', model: openai(model, { apiKey }) };
+            // Set the environment variable directly if we have an API key from config
+            if (apiKey && !process.env.OPENAI_API_KEY) {
+                process.env.OPENAI_API_KEY = apiKey;
+            }
+            return { type: 'ai-sdk', model: openai(model) };
         case 'anthropic':
-            return { type: 'ai-sdk', model: anthropic(model, { apiKey }) };
+            // Set the environment variable directly if we have an API key from config  
+            if (apiKey && !process.env.ANTHROPIC_API_KEY) {
+                process.env.ANTHROPIC_API_KEY = apiKey;
+            }
+            return { type: 'ai-sdk', model: anthropic(model) };
         case 'ollama':
             return { type: 'ollama', model, baseUrl: baseUrl || 'http://localhost:11434' };
         default:
             console.warn(`⚠️ Provider ${provider} not yet supported, falling back to OpenAI`);
-            return { type: 'ai-sdk', model: openai('gpt-4o') };
+            const fallbackConfig = apiKey ? { apiKey } : {};
+            return { type: 'ai-sdk', model: openai('gpt-4o', fallbackConfig) };
     }
 }
 
