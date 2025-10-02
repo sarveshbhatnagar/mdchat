@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # ✅ allow pushing tags
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -24,7 +27,7 @@ jobs:
         run: |
             CURRENT_VERSION=$(jq -r .version package.json)
             echo "Current version: $CURRENT_VERSION"
-            LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.8")
+            LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.9")
             echo "Latest tag: $LATEST_TAG"
 
             LATEST_VERSION=${LATEST_TAG#v}
