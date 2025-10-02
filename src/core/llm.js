@@ -77,8 +77,8 @@ function getModel(cliOptions = {}) {
             return { type: 'ollama', model, baseUrl: baseUrl || 'http://localhost:11434' };
         default:
             console.warn(`⚠️ Provider ${provider} not yet supported, falling back to OpenAI`);
-            const fallbackConfig = apiKey ? { apiKey } : {};
-            return { type: 'ai-sdk', model: openai('gpt-4o', fallbackConfig) };
+            // Do not pass a possibly unrelated apiKey to OpenAI
+            return { type: 'ai-sdk', model: openai('gpt-4o') };
     }
 }
 
