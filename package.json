@@ -1,6 +1,6 @@
 {
   "name": "mdchat",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Collaborate with LLMs directly in your terminal.   Ask, edit, summarize, and generate content inline in Markdown.",
   "type": "module",
   "main": "src/index.js",
