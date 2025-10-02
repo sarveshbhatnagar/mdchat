@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/sarveshbhatnagar/mdchat.git"
   },
-  "keywords": [],
+  "keywords": ["LLM", "markdown", "cli", "chatgpt", "gpt-4", "openai", "anthropic", "ollama", "ai", "markdown formatting", "markdown editor"],
   "author": "sarvesh",
   "license": "MIT",
   "bugs": {
